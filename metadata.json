@@ -1,0 +1,5 @@
+{
+  "name": " Robi Metadata for admin",
+  "description": "An AI-powered application to generate metadata like titles, descriptions, and keywords for stock media files such as images and videos. Features include customizable generation controls, support for various stock sites, and CSV export.",
+  "requestFramePermissions": []
+}

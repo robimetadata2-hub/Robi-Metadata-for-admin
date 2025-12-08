@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robi Metadata Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #17181a;
+      }
+      /* Custom styles that are difficult to replicate with Tailwind alone */
+      :root {
+        --theme-color: #f05a27;
+        --theme-color-hover: #ff8c66;
+        --theme-color-active-bg: #f05a271a;
+        --theme-color-shadow: #f05a2733;
+      }
+       /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-thumb { background: #4f4f4f; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #6b6b6b; }
+      ::-webkit-scrollbar-track { background: #202123; }
+
+      /* Custom Range Slider */
+      input[type="range"].slider-custom {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 6px;
+          border-radius: 3px;
+          outline: none;
+          opacity: 0.9;
+          transition: opacity .2s;
+          background-image: linear-gradient(to right, var(--theme-color), var(--theme-color));
+          background-size: var(--fill-percentage, 0%) 100%;
+          background-repeat: no-repeat;
+          background-color: #4a4a4a;
+      }
+      input[type="range"].slider-custom::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: var(--theme-color);
+          cursor: pointer;
+          border: 3px solid #fff;
+      }
+      input[type="range"].slider-custom::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: var(--theme-color);
+          cursor: pointer;
+          border: 3px solid #fff;
+      }
+      /* Custom Switch */
+      .switch input { opacity: 0; width: 0; height: 0; }
+      .switch .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4a4a4a; transition: .4s; border-radius: 34px; }
+      .switch .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; top: 50%; transform: translateY(-50%); background-color: white; transition: .4s; border-radius: 50%; }
+      input:checked + .slider { background-color: var(--theme-color); }
+      input:checked + .slider:before { transform: translateX(16px) translateY(-50%); }
+
+      /* Spinner Animation */
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .spinner {
+        width: 32px; height: 32px; border: 4px solid rgba(255, 255, 255, 0.2); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite;
+      }
+      .spinner-sm {
+        width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.2); border-top-color: #fff; border-radius: 50%; animation: spin 1s linear infinite;
+      }
+       /* Progress Bar Animation */
+      @keyframes progress-bar-stripes { from { background-position: 1rem 0; } to { background-position: 0 0; } }
+      .progress-bar-animated {
+          animation: progress-bar-stripes 1s linear infinite;
+          background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+          background-size: 1rem 1rem;
+      }
+      
+      /* Shimmer Animation for Tutorial Button */
+      @keyframes shimmer {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      .animate-shimmer {
+        animation: shimmer 2s infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
