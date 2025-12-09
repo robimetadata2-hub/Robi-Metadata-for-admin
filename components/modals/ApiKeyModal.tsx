@@ -94,9 +94,8 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ isOpen, onClose, apiKe
               onChange={(e) => setLocalSelectedModel(e.target.value)}
               className="bg-[#2c2d2f] border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             >
-              <option value="gemini-2.5-flash">gemini-2.5-flash</option>
-              <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite</option>
-              <option value="gemini-robotics-er-1.5-preview">gemini-robotics-er-1.5-preview</option>
+              
+              <option value="gemini-robotics-er-1.5-preview">Gemini Api</option>
             </select>
           </div>
 
